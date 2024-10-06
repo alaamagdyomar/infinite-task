@@ -24,4 +24,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .font-roboto-400 {
+    @apply font-roboto font-normal; /* Normal weight */
+  }
+
+  .font-roboto-700 {
+    @apply font-roboto font-bold; /* Bold weight */
+  }
+
+  .font-roboto-italic {
+    @apply font-roboto italic; /* Italic style */
+  }
+  .font-inter-400 {
+    @apply font-inter font-bold;
+  }
 }
