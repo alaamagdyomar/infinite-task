@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import SmallPopup from "../components/SmallPopup.jsx";
 import FullPagePopup from "../components/CongratsModal";
 
 const Home = () => {
-  // const [showCompactPopup, setShowCompactPopup] = useState(false);
+  const [showCompactPopup, setShowCompactPopup] = useState(false);
   const [showFullPagePopup, setShowFullPagePopup] = useState(false);
 
   return (
@@ -26,7 +27,11 @@ const Home = () => {
           >
             Full page Celebration
           </button>
-          <button className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44">
+          {showCompactPopup && <SmallPopup onClose={setShowCompactPopup} />}
+          <button
+            onClick={() => setShowCompactPopup(true)}
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+          >
             Compact Celebration
           </button>
         </div>
@@ -36,3 +41,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

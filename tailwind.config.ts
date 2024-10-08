@@ -9,13 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        mobile: { max: "639px" }, // Max-width: 639px
+        // small mobile
+        smMobile: { min: "320px", max: "376px" },
+        // mobiles
+        mobile: { min: "377px", max: "639px" }, // Max-width: 639px
         // Tablet devices (640px to 1023px)
         tablet: { min: "640px", max: "1023px" }, // Min-width: 640px, Max-width: 1023px
-        // Desktop devices (1024px to 1535px)
-        desktop: { min: "1024px", max: "1535px" }, // Min-width: 1024px, Max-width: 1535px
-        // Large desktops and max views (1536px and above)
-        "large-desktop": { min: "1536px" },
+        // laptops devices (1024px to 1535px)
+        laptop: { min: "1024px", max: "1280px" }, // Min-width: 1024px, Max-width: 1535px
+        // laptops devices (1024px to 1535px)
+        Desktop: { min: "1281px", max: "1535px" },
+        // large views
+        lview: { min: "1536px" },
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
@@ -25,6 +30,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "custom-gold": "#DCC794",
+        "gold-dark": "#F3BA2F",
       },
       transitionProperty: {
         width: "width",

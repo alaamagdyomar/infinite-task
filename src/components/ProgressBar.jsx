@@ -25,7 +25,7 @@ const ProgressBar = () => {
         <span>XP:34,500</span>
         <span>50,000</span>
       </div>
-      <div className="mobile:w-[320px] mobile:mt-[3px] tablet:w-[500px] w-[653px] h-[20px] mt-[2px] p-[4px] bg-amber-950 rounded-[10px]">
+      <div className="smMobile:w-[280px] mobile:w-[320px] mobile:mt-[3px] tablet:w-[500px] w-[653px] h-[20px] mt-[2px] p-[4px] bg-amber-950 rounded-[10px]">
         {isClient && (
           <div
             className="h-full rounded-[10px] transition-all duration-300 ease-out bg-amber-500"
