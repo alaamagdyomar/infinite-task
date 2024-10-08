@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar.jsx";
 
@@ -30,14 +31,6 @@ const FullPagePopup = () => {
       <div>
         <ProgressBar />
       </div>
-
-      {/* Claim NFT Button */}
-      <div className="flex justify-center h-[40px] smMobile:mt-[7%] mobile:mt-[5%] tablet:mt-[3%] mt-[1%]">
-        <button className="smMobile:w-[135px] smMobile:text-[14px] mobile:w-[150px] tablet:w-[175px] w-[200px] border border-[#35241C] bg-custom-gradient rounded-l">
-          Claim NFT Badge
-        </button>
-      </div>
-
       {/* Notification Text */}
       <div className="flex flex-col smMobile:mt-[3%] mt-[1.5%]">
         <div className="flex flex-col items-center smMobile:mt-[2.5%] mobile:mt-[3%]">
@@ -52,7 +45,6 @@ const FullPagePopup = () => {
             now, or retrieve it later from your Inventory.
           </p>
         </div>
-
         {/* Additional Instructions */}
         <div className="flex flex-col items-center mobile:p-[2%] mt-[3%]">
           <p className="font-inter smMobile:text-[14px] mobile:text-[14px] tablet:text-[12px] text-custom-gold text-[15px] font-normal leading-[22px] text-center">

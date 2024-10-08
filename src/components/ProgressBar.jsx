@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { useContext } from "react";
+import { BarContext } from "../context/AppContext";
 
 const ProgressBar = () => {
   const [progress, setProgress] = useState(20);
   const [isClient, setIsClient] = useState(false);
+  const { barStatus, updateBar } = useContext(BarContext);
 
-  // Ensure that dynamic attributes are only applied on the client side
   useEffect(() => {
-    setIsClient(true); // Set to true after component mounts
-  }, []);
+    setIsClient(true);
+
+    if (progress === 100) {
+      updateBar(true);
+    }
+    console.log("barstatus", barStatus);
+  }, [progress, updateBar]);
 
   const handleProg = () => {
     if (progress < 100) {
       setProgress(progress + 20);
     }
-  };
-
-  const reset = () => {
-    setProgress(0);
   };
 
   return (
@@ -29,9 +32,17 @@ const ProgressBar = () => {
         {isClient && (
           <div
             className="h-full rounded-[10px] transition-all duration-300 ease-out bg-amber-500"
-            style={{ width: `${progress}%` }} // Only applied after hydration
+            style={{ width: `${progress}%` }}
           ></div>
         )}
+      </div>
+      <div className="flex justify-center h-[40px] smMobile:mt-[7%] mobile:mt-[5%] tablet:mt-[3%] mt-[1%]">
+        <button
+          className="smMobile:w-[135px] smMobile:text-[14px] mobile:w-[150px] tablet:w-[175px] w-[200px] border border-[#35241C] bg-custom-gradient rounded-l"
+          onClick={handleProg}
+        >
+          Claim NFT Badge
+        </button>
       </div>
     </div>
   );
